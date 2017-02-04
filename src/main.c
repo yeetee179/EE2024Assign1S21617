@@ -78,7 +78,7 @@ int main(void)
         //  Call the assembly language function pid_ctrl() here, and set control input
 
 
-        extern int pid_ctrl(int e, int st);
+//        u = extern int pid_ctrl(int e, int st);
 
 
 
@@ -98,10 +98,18 @@ int main(void)
         y = plant(u,st,-0.8,0.2); // Do NOT change the plant parameters
         e = sp - y;
 
+//        scale e up to whole number
+        int e_scaled = e*1000000;
+       	printf("before %lf\n",e);
+       	printf("e_scaled is %ld\n",e_scaled);
+
         // PID controller written in C
         u = PIDcontrol(e, st);
 
-       	printf("%lf\n",e);
+       	printf("u is %lf\n",u);
+
+
+       	printf("after %lf\n",e);
     }
     stopTicks = usTicks;
     printf("Time taken (C version): %ld microseconds\n",(stopTicks-startTicks));
