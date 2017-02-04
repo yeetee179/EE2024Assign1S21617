@@ -41,7 +41,7 @@ double plant(double u, unsigned start, double a, double b)
 // The start flag should be 1 the first time this function is called
 double PIDcontrol(double en, unsigned start)
 {
-    static int Kp=25, Ki=10,  Kd=80, sn, enOld, un;
+    static double Kp=0.25, Ki=0.1,  Kd=0.8, sn, enOld, un;
 
     if (start)
     //at the start sn and enold needs to be zero, afterwards it will have other values
@@ -49,8 +49,8 @@ double PIDcontrol(double en, unsigned start)
         sn = enOld = 0.0;
     }
     sn = sn + en;
-    if (sn>950000000) sn=950000000;
-    else if (sn<-950000000) sn=-950000000;
+    if (sn>9.5) sn=9.5;
+    else if (sn<-9.5) sn=-9.5;
     un = Kp*en + Ki*sn + Kd*(en-enOld);
     enOld = en;
     return(un);
@@ -99,17 +99,12 @@ int main(void)
         y = plant(u,st,-0.8,0.2); // Do NOT change the plant parameters
         e = sp - y;
 
-
-
-       	//        scale e up to whole number
-       	        int e_scaled = e*1000000;
-       	       	printf("e %ld\n",e_scaled);
+//       	       	printf("e %lf\n",e);
 
        	        // PID controller written in C
-       	//        u = PIDcontrol(e, st);
-       	       	int u_scaled;
-       	       	u_scaled = PIDcontrol(e_scaled, st);
-       	       	printf("u %ld\n",u_scaled);
+       	        u = PIDcontrol(e, st);
+
+//       	       	printf("u %ld\n",u);
 
        	printf("after %lf\n",e);
     }
