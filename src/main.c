@@ -99,6 +99,7 @@ int main(void)
         e = sp - y;
 
 
+
 //        scale e up to whole number
         int e_scaled = e*1000000;
        	printf("before %lf\n",e);
