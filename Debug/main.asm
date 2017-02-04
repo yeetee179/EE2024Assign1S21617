@@ -2571,7 +2571,7 @@
  759 0160 C7E90223 		strd	r2, [r7, #8]
  100:../src/main.c **** 
  101:../src/main.c **** //        scale e up to whole number
- 102:../src/main.c ****         int e_scaled = e*10000;
+ 102:../src/main.c ****         int e_scaled = e*1000000;
  760              		.loc 2 102 0
  761 0164 D7E90201 		ldrd	r0, [r7, #8]
  762 0168 33A3     		adr	r3, .L26+16
@@ -2680,7 +2680,7 @@
  843 0230 9A999999 		.word	-1717986918
  844 0234 9999C93F 		.word	1070176665
  845 0238 00000000 		.word	0
- 846 023c 0088C340 		.word	1086556160
+ 846 023c 80842E41 		.word	1093567616
  847              		.cfi_endproc
  848              	.LFE32:
  850              		.bss
@@ -2740,42 +2740,42 @@
  902              		.file 5 "C:\\Users\\user-pc\\Desktop\\EE2024workspace\\Lib_CMSISv1p30_LPC17xx\\inc/system_LPC17xx.
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:19     .text.NVIC_SetPriority:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:23     .text.NVIC_SetPriority:00000000 NVIC_SetPriority
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:82     .text.SysTick_Config:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:86     .text.SysTick_Config:00000000 SysTick_Config
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:150    .bss:00000000 usTicks
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:147    .bss:00000000 $d
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:153    .text.SysTick_Handler:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:158    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:192    .text.plant:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:197    .text.plant:00000000 plant
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:884    .bss:00000020 x4.4849
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:887    .bss:00000028 x3.4848
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:890    .bss:00000030 x2.4847
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:893    .bss:00000038 x1.4846
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:896    .bss:00000040 y.4850
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:382    .text.PIDcontrol:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:387    .text.PIDcontrol:00000000 PIDcontrol
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:855    .bss:00000008 enOld.4859
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:858    .bss:00000010 sn.4858
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:864    .data:00000000 Kp.4855
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:870    .data:00000008 Ki.4856
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:876    .data:00000010 Kd.4857
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:881    .bss:00000018 un.4860
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:571    .rodata:00000000 $d
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:572    .rodata:00000000 .LC0
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:575    .rodata:00000008 .LC1
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:579    .rodata:00000034 .LC2
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:582    .rodata:00000040 .LC3
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:585    .rodata:00000054 .LC4
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:588    .rodata:00000060 .LC5
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:591    .rodata:0000006c .LC6
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:594    .text.main:00000000 $t
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:599    .text.main:00000000 main
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:852    .bss:00000004 loop.4879
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:841    .text.main:00000228 $d
-C:\Users\user-pc\AppData\Local\Temp\ccCBPVoK.s:861    .data:00000000 $d
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:19     .text.NVIC_SetPriority:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:23     .text.NVIC_SetPriority:00000000 NVIC_SetPriority
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:82     .text.SysTick_Config:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:86     .text.SysTick_Config:00000000 SysTick_Config
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:150    .bss:00000000 usTicks
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:147    .bss:00000000 $d
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:153    .text.SysTick_Handler:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:158    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:192    .text.plant:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:197    .text.plant:00000000 plant
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:884    .bss:00000020 x4.4849
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:887    .bss:00000028 x3.4848
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:890    .bss:00000030 x2.4847
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:893    .bss:00000038 x1.4846
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:896    .bss:00000040 y.4850
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:382    .text.PIDcontrol:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:387    .text.PIDcontrol:00000000 PIDcontrol
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:855    .bss:00000008 enOld.4859
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:858    .bss:00000010 sn.4858
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:864    .data:00000000 Kp.4855
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:870    .data:00000008 Ki.4856
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:876    .data:00000010 Kd.4857
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:881    .bss:00000018 un.4860
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:571    .rodata:00000000 $d
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:572    .rodata:00000000 .LC0
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:575    .rodata:00000008 .LC1
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:579    .rodata:00000034 .LC2
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:582    .rodata:00000040 .LC3
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:585    .rodata:00000054 .LC4
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:588    .rodata:00000060 .LC5
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:591    .rodata:0000006c .LC6
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:594    .text.main:00000000 $t
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:599    .text.main:00000000 main
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:852    .bss:00000004 loop.4879
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:841    .text.main:00000228 $d
+C:\Users\user-pc\AppData\Local\Temp\cc5NloBG.s:861    .data:00000000 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
