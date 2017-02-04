@@ -41,15 +41,16 @@ double plant(double u, unsigned start, double a, double b)
 // The start flag should be 1 the first time this function is called
 double PIDcontrol(double en, unsigned start)
 {
-    static double Kp=0.25, Ki=0.1,  Kd=0.8, sn, enOld, un;
+    static int Kp=25, Ki=10,  Kd=80, sn, enOld, un;
+
     if (start)
     //at the start sn and enold needs to be zero, afterwards it will have other values
     {
         sn = enOld = 0.0;
     }
     sn = sn + en;
-    if (sn>9.5) sn=9.5;
-    else if (sn<-9.5) sn=-9.5;
+    if (sn>950000000) sn=950000000;
+    else if (sn<-950000000) sn=-950000000;
     un = Kp*en + Ki*sn + Kd*(en-enOld);
     enOld = en;
     return(un);
@@ -64,28 +65,28 @@ int main(void)
 	// SystemTick clock configuration
 	SysTick_Config(SystemCoreClock / 1000000);  // every 1us
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  ASM version
-	sp = 1.0;
-	u = 0.0;
-	startTicks = usTicks;
-    for (i=0; i<50; i++)
-    {
-        if (i==0) st=1; else st=0;
-
-        y = plant(u,st,-0.8,0.2); // Do NOT change the plant parameters
-        e = sp - y;
-
-        //  Call the assembly language function pid_ctrl() here, and set control input
-
-
-//        u = extern int pid_ctrl(int e, int st);
-
-
-
-       	printf("%lf\n",e);
-    }
-    stopTicks = usTicks;
-    printf("Time taken (ASM version): %ld microseconds\n",(stopTicks-startTicks));
+////  ASM version
+//	sp = 1.0;
+//	u = 0.0;
+//	startTicks = usTicks;
+//    for (i=0; i<50; i++)
+//    {
+//        if (i==0) st=1; else st=0;
+//
+//        y = plant(u,st,-0.8,0.2); // Do NOT change the plant parameters
+//        e = sp - y;
+//
+//        //  Call the assembly language function pid_ctrl() here, and set control input
+//
+//
+////        u = extern int pid_ctrl(int e, int st);
+//
+//
+//
+//       	printf("%lf\n",e);
+//    }
+//    stopTicks = usTicks;
+//    printf("Time taken (ASM version): %ld microseconds\n",(stopTicks-startTicks));
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  C version
     sp = 1.0;
@@ -100,16 +101,15 @@ int main(void)
 
 
 
-//        scale e up to whole number
-        int e_scaled = e*1000000;
-       	printf("before %lf\n",e);
-       	printf("e_scaled is %ld\n",e_scaled);
+       	//        scale e up to whole number
+       	        int e_scaled = e*1000000;
+       	       	printf("e %ld\n",e_scaled);
 
-        // PID controller written in C
-        u = PIDcontrol(e, st);
-
-       	printf("u is %lf\n",u);
-
+       	        // PID controller written in C
+       	//        u = PIDcontrol(e, st);
+       	       	int u_scaled;
+       	       	u_scaled = PIDcontrol(e_scaled, st);
+       	       	printf("u %ld\n",u_scaled);
 
        	printf("after %lf\n",e);
     }
